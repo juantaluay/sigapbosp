@@ -42,7 +42,7 @@ try { require("./scripts/init-db.js"); } catch (e) { console.warn("init-db:", e.
 
 const app = express();
 app.set("trust proxy", 1);
-app.use(helmet({ contentSecurityPolicy: false, crossOriginEmbedderPolicy: false }));
+app.use(helmet({ contentSecurityPolicy: false, crossOriginEmbedderPolicy: false, xFrameOptions: false }));
 app.use(cors({
   origin: CORS_ORIGIN || (NODE_ENV === "production" ? false : true),
   credentials: true,

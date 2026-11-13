@@ -6,6 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js",
+    "build": "node --check server.js && node --check lib/arkas-parser.js && node --check scripts/init-db.js",
+    "lint": "node --check server.js && node --check lib/arkas-parser.js && node --check public/app.js && node --check public/penganggaran.js && node --check public/pejabat.js && node --check public/nav-menu.js",
     "init-db": "node scripts/init-db.js",
     "hash-passwords": "node scripts/hash-existing-passwords.js"
   },
